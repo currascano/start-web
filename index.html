@@ -1,27 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>S.T.A.R.T Timer</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="ui">
-  <h1>S.T.A.R.T Timer</h1>
-  <p>Select AI voice:</p>
-  <button onclick="selectAI('MIA')">MIA</button>
-  <button onclick="selectAI('BRIAN')">BRIAN</button>
-
-  <h2 id="selectedAI">Selected: None</h2>
-
-  <p>Timer (seconds):</p>
-  <input type="number" id="seconds" value="10">
-  <button onclick="startTimer()">Start Timer</button>
-
-  <h2 id="countdown"></h2>
+<div id="aiSwitcher">
+  <button class="chip active" data-ai="MIA">MIA</button>
+  <button class="chip" data-ai="BRIAN">BRIAN</button>
+  <div id="aiLabel">Selected: MIA</div>
 </div>
 
-<script src="app.js"></script>
-</body>
-</html>
+<div id="bioMIA" class="bio show">MIA — Elegant, calm guidance.</div>
+<div id="bioBRIAN" class="bio">BRIAN — Analytical, mission focused.</div>
+
+<div id="orb" class="mia">
+  <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+</div>
+<div id="countdown">Ready.</div>
+
+<label for="presetMenu">Presets:</label>
+<select id="presetMenu">
+  <option value="0" selected>Choose a preset…</option>
+</select>
+
+<div class="pillbar">
+  <button class="pill" data-seconds="120">🪥 Brush Teeth (2m)</button>
+  <button class="pill" data-seconds="300">🧘 Meditation (5m)</button>
+  <button class="pill" data-seconds="1500">🎓 Study (25m)</button>
+</div>
